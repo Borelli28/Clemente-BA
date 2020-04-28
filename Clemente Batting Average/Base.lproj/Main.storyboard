@@ -26,17 +26,6 @@
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-vi-uHX">
-                                <rect key="frame" x="119" y="210" width="176" height="131"/>
-                                <color key="tintColor" red="0.81639625520000003" green="0.64738255040000003" blue="0.2240964366" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <accessibility key="accessibilityConfiguration" hint="Batting Average Display"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="3BO-X0-PUy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.72810071239999996" green="0.61718686730000005" blue="0.29737826080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRE-7k-QXy">
                                 <rect key="frame" x="20" y="415" width="374" height="216"/>
                                 <color key="backgroundColor" red="0.72810071239999996" green="0.61718686730000005" blue="0.29737826080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -46,13 +35,24 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-vi-uHX">
+                                <rect key="frame" x="20" y="254" width="374" height="131"/>
+                                <color key="tintColor" red="0.81639625520000003" green="0.64738255040000003" blue="0.2240964366" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" hint="Batting Average Display"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="3BO-X0-PUy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.72810071239999996" green="0.61718686730000005" blue="0.29737826080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FHc-vi-uHX" secondAttribute="bottom" constant="521" id="7It-1X-sgf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FHc-vi-uHX" secondAttribute="bottom" constant="477" id="7It-1X-sgf"/>
                             <constraint firstItem="yRE-7k-QXy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="75" id="SmH-9e-zSz"/>
                             <constraint firstItem="wwM-bK-4gz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Tyx-Nv-Up2"/>
-                            <constraint firstItem="FHc-vi-uHX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="WF2-kG-yad"/>
+                            <constraint firstItem="FHc-vi-uHX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WF2-kG-yad"/>
                             <constraint firstItem="wwM-bK-4gz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YMY-Nd-2SW"/>
                             <constraint firstItem="FHc-vi-uHX" firstAttribute="centerX" secondItem="wwM-bK-4gz" secondAttribute="centerX" id="hlg-v7-WPs"/>
                             <constraint firstItem="wwM-bK-4gz" firstAttribute="leading" secondItem="yRE-7k-QXy" secondAttribute="leading" id="nsu-0k-G28"/>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8906" y="-2079"/>
+            <point key="canvasLocation" x="-8907.246376811594" y="-2079.9107142857142"/>
         </scene>
     </scenes>
 </document>
