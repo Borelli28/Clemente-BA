@@ -8,163 +8,81 @@
 
 import UIKit
 
-class ViewController: UIViewController
-{
+class ViewController: UIViewController {
 
 
     @IBOutlet weak var clementeLabel: UILabel!
     
-    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet var outputLabel: UILabel!
     
-    @IBOutlet weak var textField: UITextField!
-    
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var yearPickerView: UIPickerView!
     
     
-    //func when button is pressed
-    @IBAction func button(_ sender: Any)
-    {
+    // Is displayed in the Picker View
+    private let pickerYears = ["1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972"]
     
-        //save the user input in the text field to: user_input
-        let user_input = textField.text!
-        
-        
-         var output = ""
-         
-                
-        //display error label text
-         errorLabel.text = ""
-        
-         if user_input == "1955"
-         {
-             let sum = ".255"
-             output = sum
-         }
-
-         else if user_input == "1956"
-         {
-             let sum = ".311"
-             output = sum
-         }
-
-         else if user_input == "1957"
-         {
-             let sum = ".252"
-             output = sum
-         }
-
-         else if user_input == "1958"
-         {
-             let sum = ".289"
-             output = sum
-         }
-
-         else if user_input == "1959"
-         {
-             let sum = ".296"
-             output = sum
-         }
-
-         else if user_input == "1960"
-         {
-             let sum = ".314"
-             output = sum
-         }
-
-         else if user_input == "1961"
-         {
-             let sum = ".351"
-             output = sum
-         }
-
-         else if user_input == "1962"
-         {
-             let sum = ".312"
-             output = sum
-         }
-
-         else if user_input == "1963"
-         {
-             let sum = ".320"
-             output = sum
-         }
-
-         else if user_input == "1964"
-         {
-             let sum = ".339"
-             output = sum
-         }
-
-         else if user_input == "1965"
-         {
-             let sum = ".329"
-             output = sum
-         }
-
-         else if user_input == "1966"
-         {
-             let sum = ".316"
-             output = sum
-         }
-
-         else if user_input == "1967"
-         {
-             let sum = ".357"
-             output = sum
-         }
-
-         else if user_input == "1968"
-         {
-             let sum = ".290"
-             output = sum
-         }
-
-         else if user_input == "1969"
-         {
-             let sum = ".345"
-             output = sum
-         }
-
-         else if user_input == "1970"
-         {
-             let sum = ".351"
-             output = sum
-         }
-
-         else if user_input == "1971"
-         {
-             let sum = ".340"
-             output = sum
-         }
-
-         else if user_input == "1972"
-         {
-             let sum = ".312"
-             output = sum
-         }
-         
-         else if ["borelli", "Borelli"].contains(user_input)
-         {
-            clementeLabel.text = "Roberto " + "\"" + "Momen" + "\"" + " Clemente"
-            output = "#21"
-         }
-
-         else if user_input.isEmpty
-         {
-            output = " "
-         } else{
-            errorLabel.text = "ERROR: Invalid input | " + "Enter a Year from: 1955 - 1972"}
-         
-         
-        
-         //display the year BA of the user input to the output label
-         outputLabel.text = output
-        
-        
-    }
+    // Displayed in the Output Label
+    private let pickerAvgs = [".255", ".311", ".252", ".289", ".296", ".314", ".351", ".312", ".320", ".339", ".329", ".316", ".357", ".290", ".345", ".351", ".340", ".312"]
+   
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
+    
+        // Assign picker view delegates. More info: https://codewithchris.com/uipickerview-example/
+        self.yearPickerView.delegate = self
+        self.yearPickerView.dataSource = self
+    
     }
+    
+    // Not sure why this is needed but...
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+  
 }
+
+// This is called so we can use the methods from UIPickerView
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    // How many columns in the picker view. As many as elements in list
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+        
+    }
+    
+    // How many rows in picker view. Rows are vertical
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return pickerYears.count
+        
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return pickerYears[row]
+        
+    }
+    
+    // Capture the picker view selection as a index. Pass that index into an array and display the element in the array at the pick index. For more info: YT/playlist/ios-dev/pickerView-video
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+ 
+        return outputLabel.text = pickerAvgs[row]   // User-pick index is passed into pickerAvgs array, and that element in the index in pickerAvgs array will be display in the outputLabel
+        
+    }
+    
+    // Dk
+    func pickerViewTitle(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return pickerYears[row]
+        
+    }
+    
+        
+}
+
